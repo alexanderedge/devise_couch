@@ -1,7 +1,17 @@
 source 'https://rubygems.org'
 
+gem 'rails'
+
 gem 'orm_adapter', :git => 'https://github.com/trey-jones/orm_adapter.git'
-gem 'rails3-generators', :git => 'https://github.com/shenoudab/rails3-generators.git'
+gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
+
+gem 'couchrest', :git => 'git://github.com/couchrest/couchrest.git'
+gem 'couchrest_model', :git => 'git://github.com/couchrest/couchrest_model.git'
+
+gem 'oa-oauth', :require => "omniauth/oauth"
+gem 'oa-openid', :require => "omniauth/openid"
+
+gem 'rails3-generators', :git => 'git://github.com/shenoudab/rails3-generators.git'
 
 group :test do
   gem 'webrat', :require => false
