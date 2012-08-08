@@ -1,5 +1,4 @@
 require 'devise_couch'
-require 'devise/orm/couchrest_model/schema'
 require 'devise/orm/couchrest_model/date_time'
 require 'orm_adapter/adapters/couchrest_model'
 require 'devise/strategies/database_authenticatable'
@@ -9,11 +8,9 @@ module Devise
     module CouchrestModel
       module Hook
         def devise_modules_hook!
-          extend Schema
           create_authentication_views
           yield
-          return unless Devise.apply_schema
-          devise_modules.each { |m| send(m) if respond_to?(m, true) }
+          return
         end
 
         private
