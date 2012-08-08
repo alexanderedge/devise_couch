@@ -2,6 +2,7 @@ require 'devise_couch'
 require 'devise/orm/couchrest_model/schema'
 require 'devise/orm/couchrest_model/date_time'
 require 'orm_adapter/adapters/couchrest_model'
+require 'devise/strategies/database_authenticatable'
 
 module Devise
   module Orm
@@ -31,6 +32,15 @@ module Devise
   end
 end
 
+module CouchRest
+  module Model
+    class Base
+      extend ::Devise::Models
+      extend ::Devise::Orm::CouchrestModel::Hook
+    end
+  end
+end
+
 # resource returns a view - we want a an object of type CouchRest::Model
 module Devise
   module Strategies
@@ -53,6 +63,3 @@ module Devise
     end
   end
 end
-
-CouchRest::Model::Base.extend Devise::Models
-CouchRest::Model::Base.extend Devise::Orm::CouchrestModel::Hook
