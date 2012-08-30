@@ -47,7 +47,7 @@ module Devise
         resource = valid_password? && mapping.to.find_for_database_authentication(authentication_hash)
 
         ########## GET FIRST RESULT ###############
-        resource = resource.first unless resource.instance_of? User
+        resource = resource.first
         ##############################################
 
         if validate(resource){ resource.valid_password?(password) }
