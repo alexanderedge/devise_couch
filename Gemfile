@@ -2,11 +2,11 @@ source 'https://rubygems.org'
 
 gem 'rails'
 
-gem 'orm_adapter', :git => 'https://github.com/trey-jones/orm_adapter.git'
-gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
+gem 'orm_adapter'
+gem 'devise'
 
-gem 'couchrest', :git => 'git://github.com/couchrest/couchrest.git'
-gem 'couchrest_model', :git => 'git://github.com/couchrest/couchrest_model.git'
+gem 'couchrest'
+gem 'couchrest_model'
 
 gem 'oa-oauth', :require => "omniauth/oauth"
 gem 'oa-openid', :require => "omniauth/openid"
