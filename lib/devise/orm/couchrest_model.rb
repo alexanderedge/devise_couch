@@ -45,11 +45,6 @@ module Devise
     class DatabaseAuthenticatable < Authenticatable
       def authenticate!
         resource = valid_password? && mapping.to.find_for_database_authentication(authentication_hash)
-
-        ########## GET FIRST RESULT ###############
-        resource = resource.first
-        ##############################################
-
         if validate(resource){ resource.valid_password?(password) }
           resource.after_database_authentication
           success!(resource)
